@@ -46,18 +46,20 @@ public class Main {
 		System.out.println("Welcome to the Cheese Eater simulation.\n" + 
 				"=======================================");
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter the number of steps for this simulation to run: ");
+		System.out.println("Enter the number of steps for this simulation to run: ");
 		int times = sc.nextInt();
 		int mouseX = randGen.nextInt(room[0].length);
 		int mouseY = randGen.nextInt(room.length);
 		printRoom(room, cheesePositions, mouseX, mouseY);
 		int counter = 0;
 		for (int j = 0; j < times; j++) {
-			System.out.print("Enter the next step you'd like the mouse to take (WASD): ");
+			System.out.println("Enter the next step you'd like the mouse to take (WASD): ");
 			char move = sc.next().charAt(0);
-			int[] mousePosition = moveMouse(mouseX, mouseY, room, move);
-			mouseX = mousePosition[0];
-			mouseY = mousePosition[1];
+			if (moveMouse(mouseX, mouseY, room, move) != null) {
+				int[] mousePosition = moveMouse(mouseX, mouseY, room, move);
+				mouseX = mousePosition[0];
+				mouseY = mousePosition[1];				
+			}
 			if(tryToEatCheese(mouseX, mouseY, cheesePositions)) {
 				counter++;
 			}
