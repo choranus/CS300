@@ -46,14 +46,14 @@ public class Main {
 		System.out.println("Welcome to the Cheese Eater simulation.\n" + 
 				"=======================================");
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the number of steps for this simulation to run: ");
+		System.out.print("Enter the number of steps for this simulation to run: ");
 		int times = sc.nextInt();
 		int mouseX = randGen.nextInt(room[0].length);
 		int mouseY = randGen.nextInt(room.length);
 		printRoom(room, cheesePositions, mouseX, mouseY);
 		int counter = 0;
 		for (int j = 0; j < times; j++) {
-			System.out.println("Enter the next step you'd like the mouse to take (WASD): ");
+			System.out.print("Enter the next step you'd like the mouse to take (WASD): ");
 			char move = sc.next().charAt(0);
 			int[] mousePosition = moveMouse(mouseX, mouseY, room, move);
 			mouseX = mousePosition[0];
@@ -65,16 +65,15 @@ public class Main {
 			printRoom(room, cheesePositions, mouseX, mouseY);
 		}
 		System.out.println("==================================================\n" + 
-				"Thank you for running the Cheese Eater simulation.\n");
+				"Thank you for running the Cheese Eater simulation.");
 	}
 	public static void placeWalls(char[][] room, int numberOfWalls, Random randGen) {
-		for (int i = 0; i < numberOfWalls; i++) {
+		for (int i = 0; i < numberOfWalls;) {
 			int x = randGen.nextInt(room[0].length);
 			int y = randGen.nextInt(room.length);
 			if (room[y][x] != '#') {
 				room[y][x] = '#';
-			}else {
-				i--;
+				i++;
 			}
 		}
 		for (int m = 0; m < room.length; m++) {
@@ -86,15 +85,14 @@ public class Main {
 		}
 	}
 	public static void placeCheeses(int[][] cheesePositions, char[][] room, Random randGen) {
-		for (int i = 0; i < cheesePositions.length; i++) {
+		for (int i = 0; i < cheesePositions.length; ) {
 			int x = randGen.nextInt(room[0].length);
 			int y = randGen.nextInt(room.length);
 			int[] position = {x,y};
 			if (room[y][x] == '.' && !ifContain(position,cheesePositions)) {
 				cheesePositions[i][0] = x;
 				cheesePositions[i][1] = y;
-			}else {
-				i--;
+				i++;
 			}
 		}
 	}
@@ -124,10 +122,10 @@ public class Main {
 	public static int[] moveMouse(int mouseX, int mouseY, char[][] room, char move) {
 		if (move == 'w' || move == 'W') {
 			if (mouseY == 0) {
-				System.out.print("WARNING: Mouse cannot move outside the room.");
+				System.out.println("WARNING: Mouse cannot move outside the room.");
 				return null;
 			}else if(room[mouseY - 1][mouseX] == '#') {
-				System.out.print("WARNING: Mouse cannot move into wall.");
+				System.out.println("WARNING: Mouse cannot move into wall.");
 				return null;				
 			}else {
 				int[] result = {mouseX,mouseY - 1};
@@ -135,10 +133,10 @@ public class Main {
 			}
 		}else if(move == 's' || move == 'S') {
 			if (mouseY + 1 == room.length) {
-				System.out.print("WARNING: Mouse cannot move outside the room.");
+				System.out.println("WARNING: Mouse cannot move outside the room.");
 				return null;
 			}else if(room[mouseY + 1][mouseX] == '#') {
-				System.out.print("WARNING: Mouse cannot move into wall.");
+				System.out.println("WARNING: Mouse cannot move into wall.");
 				return null;				
 			}else {
 				int[] result = {mouseX,mouseY + 1};
@@ -146,10 +144,10 @@ public class Main {
 			}			
 		}else if(move == 'a' || move == 'A') {
 			if (mouseX == 0) {
-				System.out.print("WARNING: Mouse cannot move outside the room.");
+				System.out.println("WARNING: Mouse cannot move outside the room.");
 				return null;
 			}else if(room[mouseY][mouseX - 1] == '#') {
-				System.out.print("WARNING: Mouse cannot move into wall.");
+				System.out.println("WARNING: Mouse cannot move into wall.");
 				return null;				
 			}else {
 				int[] result = {mouseX - 1,mouseY};
@@ -157,17 +155,17 @@ public class Main {
 			}			
 		}else if(move == 'd' || move == 'D') {
 			if (mouseX + 1 == room[0].length) {
-				System.out.print("WARNING: Mouse cannot move outside the room.");
+				System.out.println("WARNING: Mouse cannot move outside the room.");
 				return null;
 			}else if(room[mouseY][mouseX + 1] == '#') {
-				System.out.print("WARNING: Mouse cannot move into wall.");
+				System.out.println("WARNING: Mouse cannot move into wall.");
 				return null;			
 			}else {
 				int[] result = {mouseX + 1,mouseY};
 				return result;
 			}
 		}else {
-			System.out.print("WARNING: Didn’t recognize move command: " + move);
+			System.out.println("WARNING: Didn’t recognize move command: " + move);
 			return null;
 		}
 	}
