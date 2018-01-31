@@ -28,6 +28,8 @@ sc.next()
 
 Don't make more than one scanner
 
+-------
+
 ### Storing Java Variables
 
 Stack: variables
@@ -35,8 +37,6 @@ Stack: variables
 Heap: store anything where we don't know its size and anything with "new"
 
 Primitive types: stored entirely in the stack
-
-
 
 ### Passing Arguments
 
@@ -47,3 +47,68 @@ Primitive types: The value is all the data
 Arrays: Value is the reference to some data. The reference is copied. The called method can change the variable in the parent method.
 
 Strings: String in Java are immutable. we can still pass a reference, but we cannot modify that data.
+
+--------
+
+### Object-oriented Programmming
+
+A collection of objects with their stated and behaviors
+
+#####Example: erase the chalkboard
+
+Objects Involved:
+
+- Me:
+
+  dominant hand, location, am I holding an eraser?
+
+  pick up something, move something, swipe something
+
+- Eraser:
+
+  is it already covered in chalk, size, location
+
+  erase chalk
+
+- Chalkboard:
+
+​	is it clean, size, location
+
+##### Principles:
+
+- Abstraction
+
+  You can use an object without knowing its implementation (details inside)
+
+- Encapsulation
+
+  Code outside of an object cannot interfere with the object's implementation
+
+- Modularity
+
+  Reuse useful behaviors and object patterns (classes)
+
+An object is an instance of a class.
+
+A class is a blueprint for its instances.
+
+### Parts of an Object
+
+##### Identity
+
+Each object has a unique id.
+
+##### Type
+
+Says which class the object is an instance of.
+
+##### State (Properties / Fields)
+
+Persistent data associated with the object.
+
+Things that the object has.
+
+##### Behaviors (Methods)
+
+Things the object can do.
+
