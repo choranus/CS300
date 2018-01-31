@@ -28,6 +28,17 @@ sc.next()
 
 Don't make more than one scanner
 
+##### .delimitor()
+
+```java
+import java.util.Scanner;
+Scanner sc = new Scanner(System.in);
+System.out.println(sc.delimitor());
+sc.useDelimitor("a");
+String userIn = sc.next();
+System.out.println(userIn);
+```
+
 -------
 
 ### Storing Java Variables
