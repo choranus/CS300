@@ -125,5 +125,29 @@ Things the object can do.
 
 ---
 
+### Explore Array List
 
+```java
+import java.util.ArrayList;
+import java.util.Random;
+
+public class ExploreArrayList{
+  public static void main(String[] args){
+	Integer[] b = new Integer[10];
+	ArrayList a = new ArrayList<Integer>();
+	a.add(new Integer(7));
+    Random randGen = new Random();
+	for(int i = 0; i < 100; i++) {
+		a.add(new Integer(randGen.nextInt(10)));
+	}
+	System.out.println(a.toString());
+	System.out.println(a);
+    for(int i = 99; i >= 0; i--){
+      if(a.get(i).equals(4)){
+        a.remove(i);
+      }
+    }
+  }
+}
+```
 
