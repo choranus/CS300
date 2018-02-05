@@ -83,7 +83,7 @@ Objects Involved:
 
 - Chalkboard:
 
-​	is it clean, size, location
+  ​is it clean, size, location
 
 ##### Principles:
 
@@ -150,4 +150,75 @@ public class ExploreArrayList{
   }
 }
 ```
+
+---
+
+###Class
+
+```java
+public class Main {
+	public static void main(String[] args) {
+		//Get something onto the board that we can erase.
+		Chalkboard board = new Chalkboard();
+		board.write("Now that there is text on the board, it should be DIRTY.");
+		System.out.println("Is the board dirty?"+board.isDirty());
+		System.out.println(board);
+		
+		//Create person and eraser objects
+		Eraser e = new Eraser(6); //What size is the eraser?
+		Person alexi = new Person("alexi","instructor");
+		alexi.pickUp(e);
+		alexi.useOn(e,board);
+		
+		//What have we changed about each object?
+		//TODO check properties of alexi, e, and board.
+		//TODO make a new eraser and compare them.
+		
+		// ending block comment tag to make partial compilation easier */
+	}
+}
+```
+
+```java
+public class Chalkboard{
+  //Fields (properties)
+  //ALMOST any field you make should be private. 
+  //Otherwise anyone can modify it, and we cannot control.
+  //Static or not? Think about whether two objects of this type MUST have the same value of the property.
+  private String location;
+  private boolean does_it_have_chalk_on_it;
+  private int size = 10; //number of characters that our board can hold
+  private String contents; //text that is on out chalkboard
+  //Constructor (a way to make new Chalkboard type objects)
+  //looks like a method
+  public Chalkboard(){
+    //any initial values for fields should be assigned here
+    size = 100;
+    does_it_have_chalk_on_it = false;
+    contents = "";
+  }
+  //Methods (behaviors)
+  //For non_static methods, there is an addtional secret parameter called "this". "this" refers to the chalkboard that we're working with
+  //call with: objectName.methodName()
+  //static methods are called with ClassName.methodName()
+  public void write(String s){
+    contents += s;
+    if (contents.length()>size){
+      contents = contents.substring(0,size);
+    }
+    does_it_have_chalk_on_it = true;
+  }
+  public boolean isDirty(){
+    return does_it_chalk_on_it;
+  }
+  //Should return what we want to have printed out when someone tries to print out object of this type
+  public String toString(){
+    return contents;
+  }
+}
+```
+
+---
+
+
 
