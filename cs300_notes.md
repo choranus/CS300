@@ -197,6 +197,12 @@ public class Chalkboard{
     does_it_have_chalk_on_it = false;
     contents = "";
   }
+  //CAN havea second constructor that take a different set of params
+  public Chalkboard(String location, int size){
+    this.location = location;
+    this.size = size;
+    contents = "";
+  }
   //Methods (behaviors)
   //For non_static methods, there is an addtional secret parameter called "this". "this" refers to the chalkboard that we're working with
   //call with: objectName.methodName()
@@ -214,6 +220,41 @@ public class Chalkboard{
   //Should return what we want to have printed out when someone tries to print out object of this type
   public String toString(){
     return contents;
+  }
+}
+```
+
+```
+public class Eraser{
+  private int size;
+  private String location;
+  public Eraser(int size){
+    this.size = size;
+    this.location = "105 Psychology";
+  }
+}
+```
+
+```
+public class Person{
+  private String name;
+  private String occupation;
+  private Eraser eraser;
+  private String location;
+  public person(String name, String occupation){
+    this.name;
+    this.occupation = occipation;
+    eraser = null; //For any field of reference type that does not have an object to refer to
+    //initially, null is a good choice
+    location = "105 Psychology";
+  }
+  // Mutator / setter
+  public void pickUp(Erasor erasor){
+    this.erasor = erasor;
+  }
+  //when a method needs input/resourses, need to decide whether to get that input as a parameter, or from a field, or from user input via Scanner
+  public useOn(Chalkboard board){
+    //...
   }
 }
 ```
