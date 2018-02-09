@@ -352,8 +352,5 @@ IntegerBagADT bag = new IntegerBagADT(); //creates a nre instance of some IntBag
 for(int i = 0; i < 100; i++){
   bag.add(i);
 }
-for(Integer i:bag){
-  System.out.print(i + ", ");
-}
 ```
 
