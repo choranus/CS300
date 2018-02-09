@@ -65,7 +65,7 @@ Strings: String in Java are immutable. we can still pass a reference, but we can
 
 A collection of objects with their stated and behaviors
 
-#####Example: erase the chalkboard
+##### Example: erase the chalkboard
 
 Objects Involved:
 
@@ -153,7 +153,7 @@ public class ExploreArrayList{
 
 ---
 
-###Class
+### Class
 
 ```java
 public class Main {
@@ -303,7 +303,7 @@ What operations can you do on a collection? (Which are fundamental?)
 
 ### Example: The "Bag"
 
-#####Concept:
+##### Concept:
 
 Simpest possible collection 
 
@@ -333,7 +333,7 @@ Add null item
 
 A bag of Integers
 
-#####Public Interface:
+##### Public Interface:
 
 ```java
 Public interface IntegerBagADT{
