@@ -261,5 +261,99 @@ public class Person{
 
 ---
 
+### Interfaces
 
+##### Object
+
+Instantiation
+
+##### Class (aka Data Structure)
+
+Implementation
+
+Tell you how it is done
+
+##### Interface (aka Abstract Data Type)
+
+Tells you what the type can do.
+
+NO CODE!
+
+### Parts of an Abstract Data Type (ADT)
+
+Set of method declarations.
+
+Contract that says any class implementing me can do ...
+
+### Collections
+
+What's a collection?
+
+- A group of items that share properties.
+
+Related terms:
+
+- Set, array, list, ArrayList
+
+What operations can you do on a collection? (Which are fundamental?)
+
+- **Add**, isEmpty, get/set an item's value, sort, **remove**
+
+---
+
+### Example: The "Bag"
+
+#####Concept:
+
+Simpest possible collection 
+
+You can add, remove items
+
+Ideally, because it's so simple. it is also fast!
+
+##### Operations:
+
+void add(Object item);
+
+Object remove();
+
+boolean isEmpty();
+
+##### What problems might occur when doing Bag operations?
+
+Remove from empty bag
+
+Run out of space
+
+Add null item
+
+### Designing an Integer Bag ADT
+
+##### Concept
+
+A bag of Integers
+
+#####Public Interface:
+
+```java
+Public interface IntegerBagADT{
+  void add(Integer item);	//item may not be null
+  Integer remove;	//Make sure to check for emptiness before removing
+  boolean isEmpty();
+}
+```
+
+### Using an Integer Bag ADT
+
+```java
+//Put 0-99 into a bag named "bag"
+//print out bag's contents. (in any order)
+IntegerBagADT bag = new IntegerBagADT(); //creates a nre instance of some IntBagADT implementation
+for(int i = 0; i < 100; i++){
+  bag.add(i);
+}
+for(Integer i:bag){
+  System.out.print(i + ", ");
+}
+```
 
