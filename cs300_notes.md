@@ -354,3 +354,109 @@ for(int i = 0; i < 100; i++){
 }
 ```
 
+---
+
+### File Input
+
+To read text from files in Java, We must import:
+
+- java.util.Scanner
+- java.io.File
+- java.io.FileNotFoundException
+
+A main method that reads lines of text from a file and prints them to System.out looks like:
+
+```java
+public static void main(String args[]){
+  File f = new File("filename.txt");
+  Scanner s = new Scanner(f);
+  while(s.hasNextLine()){
+    System.out.println(s.nextLine());
+  }
+  s.close();
+}
+```
+
+### What Can Go Wrong?
+
+##### To read the contents of a file...
+
+1, Create a File object from the file name.
+
+​	Permission?	
+
+2, Create a Scanner object from the File object.
+
+​	Might overwrite an existing file or try to read a file that doesn't exist.
+
+​	Non-text files which might interact weirdly with the Scanner.
+
+3, Use Scanner method to read the contents of the file
+
+​	Different data types
+
+​	 `next()` when the file (Scanner) is empty
+
+### The "Throws" Statement
+
+##### We use this statement to...
+
+Alert Java, also other users of our code that a piece of code is unsafe. It may cause an Exception.
+
+##### It goes...
+
+At the end of the method header.
+
+### Avoiding Exception
+
+We can avoid some exceptions with careful coding.
+
+```java
+if (f.exists()){
+  Scanner s = new Scanner(f); 
+}
+//f might not be a real file
+//still need the "throws"
+```
+
+```java
+if (f.exists()){
+  Scanner s = new Scanner(f); 
+}
+
+
+import java.io.File;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+
+public class ceasar {
+	public static void main(String args[]) {
+		//set up a File
+		File myFile = new File("hiddenHaiku.txt");
+		//Scanner object from file
+		Scanner scan = new Scanner(myFile);
+		//loop through the scanner
+		//make sure there IS a nextLine
+		//get and print the nextLine
+		while(scan.hasNextLine()){
+    		System.out.println(scan.nextLine());
+		}
+	}
+  private static String decrypt(String s){
+    //Take in a string, and decrypt it
+    String answer = "";
+    for (char c : s.toCharArray()){
+      String answer = "";
+      if (!Character.isAlphabetic(c)){
+        answer += c;
+      } else {
+        //There IS an edge case we didn't handle
+        answer += (char)(c-1);
+      }
+    }
+    return answer;
+  }
+}
+
+```
+
