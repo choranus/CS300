@@ -16,6 +16,8 @@ Eclipse debug mode
 
 Java visualizer 
 
+---
+
 ### **Getting input**
 
 ##### User Input via Scanner
@@ -26,7 +28,7 @@ Scanner sc = new Scanner(System.in);
 sc.next()
 ```
 
-Don't make more than one scanner
+Don't make more than one scanner!
 
 ##### .delimitor()
 
@@ -360,9 +362,9 @@ for(int i = 0; i < 100; i++){
 
 To read text from files in Java, We must import:
 
-- java.util.Scanner
-- java.io.File
-- java.io.FileNotFoundException
+- `java.util.Scanner`
+- `java.io.File`
+- `java.io.FileNotFoundException`
 
 A main method that reads lines of text from a file and prints them to System.out looks like:
 
@@ -375,6 +377,7 @@ public static void main(String args[]){
   }
   s.close();
 }
+// Alternative: use FileReader class
 ```
 
 ### What Can Go Wrong?
@@ -460,3 +463,109 @@ public class ceasar {
 
 ```
 
+---
+
+### File Output
+
+To write text files using Java, we must  import:
+
+- `java.io.File`
+
+- `java.io.PrintWriter`
+
+- `java.io.FileNotFoundException`
+
+  ```java
+  File outFile = new File("...");
+  PrintWriter pw = new PrintWriter(outFile);
+  pw.println("some text"); //System.out.println()
+  pw.close();
+  // Alternative: use FileWriter class
+  ```
+
+---
+
+### Exception Handling
+
+1) Try block: wraps around, code that might cause exception
+
+2) Catch block(s): code that runs if exception occurs. one per type of exception we handle
+
+3) Finally block: always runs
+
+##### Java syntax
+
+```java
+try{
+  //try block
+  //"dangerous" code goes here
+}catch (Exception e){
+  //handle this exception type
+}catch (AnotherExceptionType e2){
+  //handle this other exception type
+}finally{
+  //run code which should happen whether or not an exception occurs
+}
+```
+
+```java
+import java.io.File;
+import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+ 
+public class Encoder {
+ 
+	public static void main(String[] args) throws FileNotFoundException {
+		//Set up a File
+        try {
+        	File myFile = new File("hiddenHaiku.txt");
+        	File myOutFile = new File("decryptedHaiku.txt");
+            //Scanner object from File
+            Scanner scan = new Scanner(myFile);
+            //Loop through the scanner
+            // make sure there IS a nextLine
+            // get and print the nextLine
+            PrintWriter pw = new PrintWriter(myOutFile);
+            while(scan.hasNextLine())
+                pw.println(decrypt(scan.nextLine()));
+            pw.close(); //also flushes the PrintWriter
+            scan.close();
+        } catch (FileNotFoundException e){
+          	System.out.println("The file we tried to read didn't exist.");
+            throw e;
+        }
+
+	}
+	
+	private static String decrypt(String s) {
+		//Take in a string, and decrypt it
+		String answer = "";
+		for (char c : s.toCharArray()) {
+			if (!Character.isAlphabetic(c)) {
+				answer += c;
+			} else {
+				//There IS an edge case we didn't handle
+				answer += (char)(c-1);
+			}
+		}
+		return answer;
+	}
+ 
+}
+```
+
+##### Checked Exceptions
+
+FileNotFoundException
+
+- handle it
+- "throws" it
+
+##### Unchecked Exceptions
+
+RuntimeException
+
+- can handle it
+- can "throws" it
+- can ignore it
