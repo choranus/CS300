@@ -569,3 +569,75 @@ RuntimeException
 - can handle it
 - can "throws" it
 - can ignore it
+
+---
+
+### Basic Inheritance: Extends
+
+```java
+public class FullBagException extends RuntimeException{
+}
+```
+
+The keyword `extends` indicates that:
+
+FullBag Exception inherits from (is a) RunTimeException.
+
+When relating the two, 
+
+- `RunTimeException` is the **Superclass**
+- `FullBagException` is the **Subclass**
+
+### Sharing Between Super- and Sub- classes 
+
+##### Fields
+
+Public fields are shared.
+
+Private fields are NOT shared.
+
+##### Methods
+
+Public mathods are shared. 
+
+(Either can use the super's methods. ONLY the subclass can use the sub's methods)
+
+Private methods are NOT shared.
+
+##### Creating instances and casting
+
+```java
+TYPE variableName = new IMPLEMENRATION();
+Scanner s = new Scanner(System.in);
+IntegerArrayBag a = new SafeIntegerArrayBag(); //true
+SafeIntegerArrayBag b = new IntegerArrayBag(); //false
+```
+
+##### Overriding Superclass Methods
+
+One approach to make a "safe" add method:
+
+The `@Override` note indicates we are trying to override a superclass method. The complier will give an error if we didn't override something.
+
+```java
+import java.util.*
+
+public class SafeIntegerArrayBag extends IntegerArrayBag{
+	ArrayList<Integer> contents;
+	
+	@override
+    public void add(Integer x){
+    	if (x==null)
+    		return;
+    	contents.add(x);
+    }
+    @override
+    public Integer remove() throws EmptyBagException{
+    	// won't actual throw it but we do need to do this
+    	if (this.isEmpty())
+    		return null;
+    	contents.remove(0);
+    }
+}
+```
+
