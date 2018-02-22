@@ -641,3 +641,35 @@ public class SafeIntegerArrayBag extends IntegerArrayBag{
 }
 ```
 
+### Extends Object
+
+**In Java, every class extends exactly one class.**
+
+**If we do not choose the superclass, the default is *Object*.**
+
+All classes extend object, either directly or indirectly through a chain of inheritance.
+
+**Extending Object gives us access to several useful methods:**
+
+- `public boolean equals (Object other)`
+
+  Test whether they have the same location in memory
+
+- `public final Class<?> getClass()`
+
+  Reports the class associated with an object
+
+- `public int hashcode`
+
+- `public String toString(Object other)`
+
+### Polymorphism
+
+Ad hoc polymorphism: Multiple methods with same name (overloaded), behavior varies by param type.
+
+Parametric polymorphism: A method whose behavior systematically changes based on input type.
+
+Subtyping: Param poly specifically allowing us to substitute in "subtypes". Example: subclasses
+
+**Polymorphism occur at both run-time and at compile-time.**
+
