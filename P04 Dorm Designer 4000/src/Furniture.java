@@ -48,7 +48,7 @@ public class Furniture {
 		rotations = 0;
 		this.type = type;
 	}
-	// constructor overload
+	// constructor overwrite
 	public Furniture(String type,float x, float y,int rotations,PApplet processing) {
 		image = processing.loadImage("images/"+type+".png");
 		position = new float[] {x,y};
