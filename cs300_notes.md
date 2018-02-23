@@ -663,6 +663,8 @@ All classes extend object, either directly or indirectly through a chain of inhe
 
 - `public String toString(Object other)`
 
+---
+
 ### Polymorphism
 
 Ad hoc polymorphism: Multiple methods with same name (overloaded), behavior varies by param type.
@@ -672,4 +674,41 @@ Parametric polymorphism: A method whose behavior systematically changes based on
 Subtyping: Param poly specifically allowing us to substitute in "subtypes". Example: subclasses
 
 **Polymorphism occur at both run-time and at compile-time.**
+
+### Interface
+
+Recall that in Java, every class extends exactly one class.
+
+Sometimes, we want to inherit behavior from more than one source. Behavior from secondary sources comes through interfaces.
+
+```java
+public class A {
+  public boolean returnTrue(){return True;}
+}
+public interface B {
+  public int returnSeven();
+}
+public class C extends A implements B{
+  //We get returnTrue for free
+  //Must implement returnSeven()
+  public int returnSeven(){
+    return 7;
+  }
+}
+```
+
+We can implement mutiple implements in a same class.
+
+### The Comparable Interface
+
+```java
+public interface Comparable<T>{
+  public int campareTo(T other);
+}
+/* Expectation:
+ * If a > b: return positive #
+ * If a < b: return negative #
+ * If a == b: return 0
+ */
+```
 
