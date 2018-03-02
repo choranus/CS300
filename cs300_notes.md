@@ -712,3 +712,31 @@ public interface Comparable<T>{
  */
 ```
 
+---
+
+### ListADT
+
+Ordered sequence of items with no set size limit.
+
+**Operations**:
+
+- add items* `add(item)` `add(item,position)`
+- remove items* `remove(position)` `remove(item)`
+- set / change item's value* could implement with remove+add 
+- move items around
+- sort
+- get length*
+- filter for certain conditions
+- print
+- access items' value without removing*
+- empty the entire list at once
+
+**Issues**:
+
+- null item. Not allowed. IllegalArgumentException
+- duplicate items. Allowed!
+- badposition (too large or too small)
+
+### Interfaces inheriting from other interfaces
+
+Notice that Java's List<E> interface extends the Collection<E> interface.
