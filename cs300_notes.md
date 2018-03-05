@@ -740,3 +740,27 @@ Ordered sequence of items with no set size limit.
 ### Interfaces inheriting from other interfaces
 
 Notice that Java's List<E> interface extends the Collection<E> interface.
+
+### Link Data Type
+
+A chain of linked nodes
+
+**ListNode Class**:
+
+- Fields:
+
+  `ListNode next;`
+
+  `E data;`
+
+- Methods:
+
+  `E getData();`
+
+  `void setData(E item);`
+
+  `ListNode getNext();`
+
+  `void setNext(ListNode n);`
+
+  ​
