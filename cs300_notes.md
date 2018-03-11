@@ -763,4 +763,5 @@ A chain of linked nodes
 
   `void setNext(ListNode n);`
 
-  ​
+---
+

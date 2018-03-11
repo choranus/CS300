@@ -1,0 +1,27 @@
+2.131880 10 1 4 ALERT Attention Please
+2.317850 12 0 3 PRINT document
+2.582089 17 1 2 PRINT Exam
+2.777749 6 0 3 PRINT document
+2.880481 9 1 2 ALERT Emergency Message
+2.964532 1 0 5 PRINT Lecture Notes
+3.356141 4 0 3 PRINT pdf document
+4.017715 18 0 2 PRINT Poster
+4.672332 5 0 1 PRINT Meeting Report
+4.715944 14 1 5 ALERT Warning Message
+5.094694 1 1 4 ALERT Security Message
+5.211284 2 0 3 PRINT Poster
+5.352776 16 0 2 PRINT pdf document
+5.805995 1 0 3 PRINT Lecture Notes
+6.172031 22 0 4 PRINT pdf document
+6.277862 20 0 3 PRINT Meeting Report
+7.139645 8 1 2 5 PRINT Poster
+7.893277 26 1 10 ALERT Attention Please
+8.272372 15 0 1 PRINT Lecture Notes
+8.593733 13 0 3 PRINT Poster
+8.869035 27 0 4 PRINT Meeting Report
+9.430660 3 1 3 ALERT Emergency Message
+9.483732 7 0 1 PRINT Lecture Notes
+9.530545 25 0 5 PRINT Poster
+9.654338 21 0 10 PRINT pdf document
+9.763013 19 0 5 PRINT Lecture Notes
+10.020560 24 1 2 ALERT Warning Message
