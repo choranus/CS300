@@ -765,3 +765,44 @@ A chain of linked nodes
 
 ---
 
+#### Analyzing algorithms
+
+Performance
+
+- Time
+- Space
+- Best case
+- Worst case
+
+Errors
+
+- Not just a binary work
+- Presition
+- Stability
+
+Simplicity
+
+- Readability
+- Elegance
+
+Versatility
+
+- Generic
+
+
+
+CONSTANT: $O(1)$ When input size doubles, algorithm takes same time.
+
+LINEAR: $O(n)$ When input size doubles, method takes 2x time.
+
+QUADRATIC: $O(n^2)$
+
+LOGARITHMIC: $O(logn)$
+
+EXCEPONENTIAL: $O(a^n)$
+
+
+
+**Big-O**
+
+A function $T(n)$ is $O(f(n))$ if for constant c and some size of n, $T(n) \leq c \cdot F(n)$ for all $n>n_0$.
