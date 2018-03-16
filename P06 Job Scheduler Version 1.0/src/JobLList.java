@@ -153,6 +153,7 @@ public class JobLList implements WaitingListADT<JobNode> {
 		while (curr.getNext() != null) {
 			curr = curr.getNext();
 			currC.setNext(curr.copy());
+			currC = currC.getNext();
 		}
 		return copyList;
 	}
