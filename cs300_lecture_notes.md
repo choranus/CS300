@@ -806,3 +806,92 @@ EXCEPONENTIAL: $O(a^n)$
 **Big-O**
 
 A function $T(n)$ is $O(f(n))$ if for constant c and some size of n, $T(n) \leq c \cdot F(n)$ for all $n>n_0$.
+
+---
+
+### Queue ADT
+
+**Concept**: Line at a grocery store.
+
+**Operations**:
+
+- `enqueue(T item)`	     add, push
+- `T dequeue()`                    remove, pop
+- `T peek()`                          peek, get
+- `boolean isEmpty()`        isEmpty
+
+##### Implementation via Chain of Linked Nodes
+
+Option1: front of queue at tail of chain, end at head of chain.
+
+Option2: front of queue at head of chain, end at tail of chain. O(1)
+
+##### Implementation via Array
+
+Option1: front of queue at index `0`, end at index `n-1`.
+
+Option2: front of queue at index `n-1`, end at index `0`.
+
+Option3: front of queue at first item's index, end at last item's index. O(1)
+
+##### Circular Indexing
+
+What if I alternate enqueue / dequeue lots of items?
+
+Record an offset from array's index 0 to the front of queue. 
+
+Make sure to modulo by the array size.
+
+---
+
+### Iteration
+
+##### via for loop
+
+```java
+for (int i=0; i<myList.size(); i++){
+    E item = myList.get(i); //if using a LinkedList, might be very expensive timevise
+    // do something with item
+}
+```
+
+##### via for-each loop
+
+```java
+for (E item:myList){
+    // cannot access index, no fexibility
+    // do something with item
+}
+```
+
+##### via iterator
+
+```java
+ListIterator<E> iter = MyList.listIterator(0); // method in the LinkedList class
+											   // 0 tells it what to start
+while (iter.hasNext()){
+    E item = iter.next();
+    // do something with item
+}
+```
+
+### Iterator vs Iterable
+
+An Iterable is a data structure whose elements may be returned one at a time. (list, stack, queue...)
+
+An Iterator is a class returns items from an iterable one at a time.
+
+### ListIterator
+
+##### Java's LinkedList methods (that we have seen before)
+
+##### New LinkedList method:
+
+`ListIterator<E> listIterator(int index)`: Returns a new iterator over this list, starting at the given index.
+
+##### ListIterator<E> core methods
+
+`boolean hasNext()`: True if there is at least one more item to return. False otherwise.
+
+`E next()`: Returns the "next"item and advances a pointer to the following item.
+
