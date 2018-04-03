@@ -895,3 +895,42 @@ An Iterator is a class returns items from an iterable one at a time.
 
 `E next()`: Returns the "next"item and advances a pointer to the following item.
 
+---
+
+### Search 
+
+```java
+public class search {
+	/*
+	 * Linear Search
+	 * size: N = number of items in list
+	 * search one by one
+	 */
+	boolean LinSearch(ListADT<E>L, int pos, E x) {
+		if(pos >= liSize()) return false;
+		if(x.equals(L.get(pos))) return true;
+		return LinSearch(L, pos+1, x);
+	}
+	
+	/*
+	 * Binary Search
+	 * divide and conquer
+	 * requires a sorted list
+	 */
+	boolean BinSearch(ListADT<E>L, int first, int last, E x) {
+		if(first >= last) return false;
+		int centre = (first + last)/2;
+		if(L.get(centre).equals(x))return true;
+		if(x.compareTo(L.get(centre)) < 0) return BinSearch(L, first, centre, x);
+		return BinSearch(L, centre+1, last, x);
+	}
+}
+```
+
+### Tree
+
+ADT Data types:
+
+- linear (list, stack, queue)
+- hiearchical (tree)
+- graphical (graph)
