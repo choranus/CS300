@@ -1,4 +1,6 @@
-### **Debugging techniques**
+# CS 300 Lecture Notes
+
+### Debugging techniques
 
 Visual inspection
 
@@ -934,3 +936,78 @@ ADT Data types:
 - linear (list, stack, queue)
 - hiearchical (tree)
 - graphical (graph)
+
+```java
+TreeNode
+class TreeNode<E> {
+	private E data;
+	private ListADT<TreeNode<E>> children;
+}
+
+Tree
+class Tree<E> {
+	private TreeNode<E> root;
+	…
+
+	public Tree() {
+		root = null;
+	}
+	…
+}
+```
+
+**Trees…**
+
+- may be Binary (has LEFT children and RIGHT children)
+- have Height (nodes have Depth)
+- may have Subtrees
+- may be Balanced (if its children's subtrees are roughly the same size)
+
+### Priority Queue
+
+**Concept**: A collection of items, each with a priority (a number where number means higher priority), Dequeue operation returns the highest priority item.
+
+**Interface**:
+
+```java
+interface PriorityQueueADT<T extends Comparable<T>> {
+    public void enqueue(T newObject);
+    public T dequeue();
+    public T peek();
+    public boolean isEmpty();
+}
+```
+
+**Options**:
+
+| data structure                  |      enqueue complexity       |    dequeue complexity    |
+| :------------------------------ | :---------------------------: | :----------------------: |
+| linked  chain of nodes unsorted |             O(1)              |      O(N) traverse       |
+| linked chain of nodes sorted    |         O(N) traverse         |   O(1) take from head    |
+| unsorted array                  |             O(1)              |           O(N)           |
+| sorted array                    | O(logN) search+ O(N) traverse | O(1) take from index N-1 |
+| tree                            |            O(logN)            |         O(logN)          |
+
+### Implementing a Priority Queue with a Tree
+
+**Shape Constraint**
+
+Tree must be a complete tree.
+
+- every depth except the last one has all possible nodes
+- last depth is filled left to right
+
+**Ordering Constraint**
+
+Each node has a priority
+
+**Enqueue**
+
+- maintain the shape constraint
+- have the new node "percolate up" until the tree meets the ordering constraint. 
+
+**Dqueue**
+
+- the highest priority item is the root
+- fix the shape constraint, by moving the "last" item (shape-wise) to the root
+- fix the ordering constraint
