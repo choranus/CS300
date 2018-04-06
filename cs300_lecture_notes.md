@@ -720,7 +720,7 @@ public interface Comparable<T>{
 
 Ordered sequence of items with no set size limit.
 
-**Operations**:
+##### Operations:
 
 - add items* `add(item)` `add(item,position)`
 - remove items* `remove(position)` `remove(item)`
@@ -747,7 +747,7 @@ Notice that Java's List<E> interface extends the Collection<E> interface.
 
 A chain of linked nodes
 
-**ListNode Class**:
+##### ListNode Class:
 
 - Fields:
 
@@ -813,9 +813,9 @@ A function $T(n)$ is $O(f(n))$ if for constant c and some size of n, $T(n) \leq 
 
 ### Queue ADT
 
-**Concept**: Line at a grocery store.
+##### Concept: Line at a grocery store.
 
-**Operations**:
+##### Operations:
 
 - `enqueue(T item)`	     add, push
 - `T dequeue()`                    remove, pop
@@ -990,24 +990,38 @@ interface PriorityQueueADT<T extends Comparable<T>> {
 
 ### Implementing a Priority Queue with a Tree
 
-**Shape Constraint**
+##### Shape Constraint
 
 Tree must be a complete tree.
 
 - every depth except the last one has all possible nodes
 - last depth is filled left to right
 
-**Ordering Constraint**
+##### Ordering Constraint
 
 Each node has a priority
 
-**Enqueue**
+##### Enqueue
 
 - maintain the shape constraint
 - have the new node "percolate up" until the tree meets the ordering constraint. 
 
-**Dqueue**
+##### Dqueue
 
 - the highest priority item is the root
 - fix the shape constraint, by moving the "last" item (shape-wise) to the root
 - fix the ordering constraint
+
+### Big Picture: Types of Data Structure
+
+##### Position Based
+
+Access an item by its position
+
+Unsorted List, Stack
+
+##### Value Based
+
+Access / insert an item by its value.
+
+Priority Queue, Sorted List
