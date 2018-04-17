@@ -71,7 +71,7 @@ public class SequenceIterator implements Iterator<Integer>{
      */
     @Override
     public Integer next() {
-        return new Integer(generator.generateNumber(++index));
+        return new Integer(generator.generateNumber(index++));
     }
  
 }

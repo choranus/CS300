@@ -98,6 +98,7 @@ public class Sequence implements Iterable<Integer>{
 	    	System.out.println("==========Fibonacci Sequence==========");
 	    	sequence = new Sequence(new FibonacciNumberGenerator(),20);
 	    	System.out.println(sequence.toString());
+	    	Sequence s = new Sequence(new ArithmeticNumberGenerator(3,3),4);
     }
     
 }
