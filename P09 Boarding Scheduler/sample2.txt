@@ -1,0 +1,15 @@
+Bulbasaur, 10, 5A
+Charmander, 10, 6A
+Squirtle, 10, 7A
+Caterpie, 11, 12A
+Weedle, 12, 12B
+Pidgey, 13, 11A
+Rattata, 13, 10A
+Spearow, 14, 11B
+Ekans, 15, 13A, 1
+Pikachu, 16, 8A, 1
+Sandshrew, 17, 9A
+NidoranF, 17, 13B
+NidoranM, 17, 13C
+Clefairy, 18, 10B
+Vulpix, 18, 6B
