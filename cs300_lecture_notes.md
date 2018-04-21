@@ -1025,3 +1025,61 @@ Unsorted List, Stack
 Access / insert an item by its value.
 
 Priority Queue, Sorted List
+
+### Sort
+
+##### Bubble Sort
+
+```java
+while (not sorted) {
+	for (int i=0; i<N-1; i++) {
+		if(A[i] > A[i+1]) {
+			swap(A[i],A[i+1]);
+		}
+	}
+}
+//O(N^2)
+```
+
+##### Selection Sort
+
+```java
+fot (int i=0; i<N-1; i++){
+    int x = findMinIndex(A,i);
+    swap(A[i],A[x]);
+}
+//O(N^2)
+```
+
+##### Insertion Sort
+
+```java
+for (int i=0; i<N; i++) {
+	tmp = A[i];
+	int j = i-1;
+	for (; j>=0 && A[j]>tmp; j--) {
+		shift(A[j],A[j+1]); //shift from index j to j+1
+	}
+	A[j+1] = tmp;
+}
+//O(N^2)
+```
+
+### Heap Sort
+
+**Concept**: Enqueue ot dequeue from a heap are O(logN). All items enqueued! O(N\*logN). Repeated dequeue gives items in descending order: O(N\*logN)
+
+```java
+for (item : A){
+    heap.enqueue(item);
+}
+for (int i=N-1; i<=0; i++){
+    A[i] = heap.dequeue();
+}
+```
+
+**Optimization**: Make the heap use the same array as out sorted (initially) data.
+
+### Merge Sort
+
+**Concept**: Divide and Conquer! If the left and right halves are already sorted, we can merge them in O(N) time.
