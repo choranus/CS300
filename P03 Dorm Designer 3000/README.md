@@ -1,0 +1,1 @@
+This project involves refactoring the code from P02 Dorm Designer 2000 program into a more object-oriented organization.  Within this reorganized code, we’ll implement the ability to add different kinds of furniture by clicking on buttons, and we’ll add the ability to rotate or remove furniture using the keyboard.

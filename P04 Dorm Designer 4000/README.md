@@ -1,0 +1,1 @@
+This project involves extending P03 Dorm Designer 3000 program to both save and load the layout of a dorm room to and from a file.  The program will also need to account for a variety of potential problems with the data in this file, and report appropriate warning messages for each.
